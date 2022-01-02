@@ -1,3 +1,5 @@
+/* 1월 1일 (토) - 세 수 중 최솟값 - 1회차 */
+
 function solution(a, b, c) {
 	let	min = a;
 

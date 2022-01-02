@@ -1,3 +1,5 @@
+/* 1월 1일 (토) - 연필 개수 - 1회차 */
+
 function solution(n) {
 	let	quotient = parseInt(n / 12);
 	let	remainder = n % 12;

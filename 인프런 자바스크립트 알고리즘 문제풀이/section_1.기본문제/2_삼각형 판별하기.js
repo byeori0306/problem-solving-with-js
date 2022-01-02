@@ -1,3 +1,5 @@
+/* 1월 1일 (토) - 삼각형 판별하기 - 1회차 */
+
 function find_max(a, b, c) {
 	let max = a;
 
