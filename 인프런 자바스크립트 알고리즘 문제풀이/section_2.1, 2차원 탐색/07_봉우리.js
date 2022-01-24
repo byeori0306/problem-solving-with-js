@@ -1,20 +1,24 @@
-/* 1월 5일 (수) - 봉우리 - 1회차 */
+/* 1월 24일 (월) - 봉우리 - 2회차 */
 
 function solution(n, arr) {
 	let	cnt = 0;
-	let	p = new Array(n + 2);
+	let	dx = [-1, 0, 1, 0];
+	let	dy = [0, 1, 0, -1];
 
-	for (let i = 0; i < n + 2; i++) {
-		p[i] = new Array(n + 2).fill(0);
-	}
-	for (let i = 1; i < n + 1; i++) {
-		for (let j = 1; j < n + 1; j++) {
-			p[i][j] = arr[i - 1][j - 1];
-		}
-	}
-	for (let i = 1; i < n + 1; i++) {
-		for (let j = 1; j < n + 1; j++) {
-			if (p[i][j] > p[i - 1][j] && p[i][j] > p[i + 1][j] && p[i][j] > p[i][j - 1] && p[i][j] > p[i][j + 1])
+	for (let i = 0; i < n; i++) {
+		for (let j = 0; j < n; j++) {
+			let check = 0; // let flag = 1;
+			for (let k = 0; k < 4; k++) {
+				let	x = i + dx[k];
+				let	y = j + dy[k];
+				// if (x >= 0 && y >= 0 && x < n && y < n && arr[i][j] > arr[x][y])
+				//	flag = 0; break;
+				if (x < 0 || y < 0 || x >= n || y >= n)
+					check += 1;
+				else if (arr[i][j] > arr[x][y])
+					check += 1;
+			}
+			if (check === 4) // if (flag)
 				cnt += 1;
 		}
 	}
@@ -26,4 +30,5 @@ let dx = [-1, 0, 1, 0];
 let dy = [0, 1, 0, -1];
 i + dx[k];
 j + dy[k];
+flag 사용
 */

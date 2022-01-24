@@ -1,7 +1,7 @@
 /**
- * @desc date : Wed 01/12/22
+ * @desc date : Mon 01/24/22
  * @desc problem : 올바른 괄호
- * @desc round : 1st -> fail
+ * @desc round : 2nd
  */
 
 /**
@@ -14,8 +14,11 @@ function solution(str) {
 	for (let x of str) {
 		if (x === '(')
 			stack.push(x);
-		else if (x === ')')
-			stack.pop();
+		else if (x === ')') {
+			p = stack.pop();
+			if (p !== '(') // 이 조건 대신 pop 위에 if (stack.length === 0) return "NO";
+				return 'NO';
+		}
 	}
 	if (stack.length === 0)
 		return 'YES';
@@ -25,5 +28,5 @@ function solution(str) {
 
 /**
  * @desc : 풀이
- * '))))' -> 이 케이스에서 fail
+ * '))))' -> 이 케이스에서 1회차 때 fail 
  */
